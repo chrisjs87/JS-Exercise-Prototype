@@ -67,9 +67,6 @@ function Airplane(name) {
 //  josh.poop();
 //  console.log(josh.stomach);  // will show that the array of the stomach has been emptied
   
-  
-  
-  
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -84,10 +81,16 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
   }
-  
+
+ Car.prototype.fill = function(gallons){
+   return this.tank += gallons;
+ }
   
   /*
     TASK 3
