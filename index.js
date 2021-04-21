@@ -74,6 +74,7 @@ function Airplane(name) {
           + should initialize with an `tank` at 0
           + should initialize with an `odometer` at 0
       - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
+
       - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
           + Should cause the `odometer` to go up.
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
@@ -99,10 +100,14 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
-  }
- 
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
+}
+
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`;
+}
   
   /* 
     TASK 4
